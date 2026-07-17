@@ -18,7 +18,7 @@
 rootfs:
   type: rootfs
   arch: [arm64]
-  edition: plamos
+  edition: plamo_wf_experimental
   variant: phone
   apilevel: [28, 29, 30, 32, 33]
 
