@@ -15,7 +15,7 @@
 # Recovery-flashable rootfses                                          #
 ########################################################################
 
-rootfs:
+rootfs_phosh:
   type: rootfs
   arch: [arm64]
   edition: phosh
@@ -49,10 +49,31 @@ rootfs_gsi_base:
       only_stable: yes
       packages: *devtools_packages
 
-rootfs_plamo_wf_experimental:
-  type: rootfs
+########################################################################
+# Recovery-flashable images                                          #
+########################################################################
+
+image_phosh:
+  type: image
   arch: [arm64]
-  edition: plamo_wf_experimental
+  edition: phosh
+  variant: phone
+  apilevel: [30]
+
+  packages: *adaptation_generic_packages
+
+  bundles:
+    # Developer tools bundle
+    - name: droidian-devtools
+      arch: any
+      apilevel: any
+      only_stable: yes
+      packages: *devtools_packages
+
+image_gsi_base:
+  type: image
+  arch: [arm64]
+  edition: gsi_base
   variant: phone
   apilevel: [30]
 
