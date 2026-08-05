@@ -18,6 +18,40 @@
 rootfs:
   type: rootfs
   arch: [arm64]
+  edition: phosh
+  variant: phone
+  apilevel: [30]
+
+  packages: *adaptation_generic_packages
+
+  bundles:
+    # Developer tools bundle
+    - name: droidian-devtools
+      arch: any
+      apilevel: any
+      only_stable: yes
+      packages: *devtools_packages
+
+rootfs_gsi_base:
+  type: rootfs
+  arch: [arm64]
+  edition: gsi_base
+  variant: phone
+  apilevel: [30]
+
+  packages: *adaptation_generic_packages
+
+  bundles:
+    # Developer tools bundle
+    - name: droidian-devtools
+      arch: any
+      apilevel: any
+      only_stable: yes
+      packages: *devtools_packages
+
+rootfs_plamo_wf_experimental:
+  type: rootfs
+  arch: [arm64]
   edition: plamo_wf_experimental
   variant: phone
   apilevel: [30]
